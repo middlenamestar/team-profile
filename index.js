@@ -45,8 +45,8 @@ function managerQs(){
             },
         ])
         .then((answers) =>{
-            console.log(answers);
-            const manager = new Manager({name, id, email, office});
+            const {name, id, email, office} = answers;
+            const manager = new Manager(name, id, email, office);
             team.push(manager);
             addMember();
         });
@@ -78,9 +78,9 @@ function engineerQs(){
                 message: 'thanks! now, what\'s their github username?',
             },
         ])
-    console.log('cool, thanks... processing....')
         .then((answers) =>{
-            const engineer = new Engineer({name, id, email, github});
+            const {name, id, email, github} = answers;
+            const engineer = new Engineer(name, id, email, github);
             team.push(engineer);
             addMember();
         });
@@ -112,9 +112,9 @@ function internQs(){
                 message: '!! what\'s the name of the university they attend?',
             },
         ])
-    console.log('woohoo!')
         .then((answers) =>{
-            const intern = new Intern({name, id, email, school});
+            const {name, id, email, school} = answers;
+            const intern = new Intern(name, id, email, school);
             team.push(intern);
             addMember();
         });
@@ -132,11 +132,11 @@ function addMember(){
             },
         ])
         .then((response) =>{
-            switch(response){
-                case 'engineer':
+            switch(response.add_member){
+                case 'yea, engineer':
                     engineerQs();
                     break;
-                case 'intern':
+                case 'yea.. intern!':
                     internQs();
                     break;
                 default:
@@ -147,10 +147,9 @@ function addMember(){
 
 // FINISH
 function finishUp(){
-    const html = generateHTML(team);
-    fs.writeFile('./dist/index.html', html, (err) =>
+    fs.writeFile('./dist/index.html', generateHTML(team), (err) =>
     err ? console.log(err) : console.log('yay! your team was created successfully.')
     );
-}
+};
 
 init();
