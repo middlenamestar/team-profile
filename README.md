@@ -2,6 +2,14 @@
 
 Meet the stardust team! This command-line application takes in information about employees on a software engineering team, called stardust✪, and generates an HTML page that displays information about each employee.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Processes](#processes)
+- [Credits](#credits)
+- [License](#license)
+
 ## Installation
 
 In order to properly run this application, you will need to clone the repository, run Node, and install Jest and Inquirer.
