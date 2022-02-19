@@ -7,6 +7,8 @@ const Intern = require ('./lib/intern');
 const team = [];
 const generateHTML = require('./src/generateHTML');
 
+
+
 // initializing function.
 function init(){
     // manager questions first.
@@ -15,7 +17,7 @@ function init(){
 
 // MANAGER QUESTIONS function.
 function managerQs(){
-    console.log('HI! congrats on building your team. let\'s get started!');
+    console.log('HI! congrats on building your team. Let\'s get started!');
     inquirer
         .prompt([
             {
@@ -55,7 +57,7 @@ function engineerQs(){
             {
                 type: 'input',
                 name: 'name',
-                message: 'what\'s their name?',
+                message: 'what is their name?',
             },
             {
                 type: 'input',
