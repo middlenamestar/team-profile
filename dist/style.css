@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(206, 233, 241);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    cursor: default;
+}
+
+::selection{
+    background: rgb(173, 218, 148);
+}
+
+/* jumbotron type thingy. */
+header{
+    background: rgb(205, 225, 233);
+}
+
+/* "stardust team roster." */
+#head-title{
+    font-size: 38px;
+}
+
+#team-ros{
+    font-family: 'Courier Prime', monospace;
+    color:rgb(29, 75, 65);
+}
+
+/* "meet our team" */
+#head-descr{
+    font-size: 22px;
+}
+
+#star{
+    color: rgb(255, 0, 0);
+}
+
+.card{
+    background: rgb(211, 230, 236);
+}
+
+#empl-role{
+    font-weight: 300;
+    font-size: 19px;
+}
+
+/* THE ENTIRE LINE, ENTIRE P TAG */
+#man-office-line, #intern-u-line{
+    font-size: 17px;
+}
+
+/* JUST "OFFICE SUITE," AND "UNI ATTENDING" WORDS */
+#man-office, #intern-uni{
+    font-weight: 400;
+}
+
+/* #u-can-reach-me-at{
+    font-style: italic;
+} */
+
+/* links: email, and github. */
+a{
+    color: rgb(38, 100, 88);
+    font-family: 'Courier Prime', monospace;
+    font-size: 15px;
+}
+
+a:hover{
+    color: rgb(243, 255, 75);
+    /* rgb(213, 42, 219 */
+}
+
+/* weird css font-weights bc googlefonts is being strange and making some text bolder than others even though I set weight to 300 for everything. */
