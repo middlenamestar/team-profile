@@ -42,19 +42,23 @@ function generateHTML(team){
     </html>`;
 };
 
-// MANAGER CARD - whenever we're generating a manager card, it's going to push this html information into the content array, And the content array is going to be put into the general html body b/w the container.
+// MANAGER CARD - whenever we're generating a manager card, it's going to push this html information into the content array, and the content array is going to be put into the general html body b/w the container.
+
 function genManager(manager){
     // console.log(manager.name);
     // Manager { name: 'pk', id: '32', email: 'prt', office: '89' }
     // console.log(manager.getRole());
     let managerCard =
-    `<div class="col-6 col-md-6 col-lg-3 card">
-        <div class="card-body">
-            <h5 class="card-title">${manager.name}, ${manager.getRole()}</h5>
-            <h6 class="card-subtitle text-muted">ID: ${manager.id}</h6>
-            <p class="card-text">Office Suite: ${manager.office}</p>
-            <p class="card-text">you can reach me at:</p>
+    `<div class="col mb-4">
+        <div class="card h-100 border-dark">
+            <div class="card-body">
+                <h5 class="card-title">${manager.name}, <span id="empl-role">${manager.getRole()}</span></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ID# ${manager.id}</h6>
+                <p id="man-office-line" class="card-text"><span id="man-office">Office Suite:</span> ${manager.office}</p>
+            </div>
+            <div class="card-footer border-dark">
                 <a href="mailto:${manager.email}" class="card-link">${manager.email}</a>
+            </div>
         </div>
     </div>`;
     content.push(managerCard);
@@ -63,13 +67,16 @@ function genManager(manager){
 function genEngineer(engineer){
     // console.log(engineer);
     let engineerCard =
-    `<div class="col-6 col-md-6 col-lg-3 card">
-        <div class="card-body">
-            <h5 class="card-title">${engineer.name}, ${engineer.getRole()}</h5>
-            <h6 class="card-subtitle text-muted">ID: ${engineer.id}</h6>
-            <p class="card-text">you can reach me at:</p>
-                <a href="mailto:${engineer.email}" class="card-link">${engineer.email}</a>
+    `<div class="col mb-4">
+        <div class="card h-100 border-dark">
+            <div class="card-body">
+                <h5 class="card-title">${engineer.name}, <span id="empl-role">${engineer.getRole()}</span></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ID# ${engineer.id}</h6>
+            </div>
+            <div class="card-footer border-dark">
+                <a href="mailto:${engineer.email}" class="card-link">${engineer.email}</a> ||
                 <a target="_blank" href="https://github.com/${engineer.github}">github/${engineer.github}</a>
+            </div>
         </div>
     </div>`;
     content.push(engineerCard);
@@ -77,13 +84,16 @@ function genEngineer(engineer){
 
 function genIntern(intern){
     let internCard =
-    `<div class="col-6 col-md-6 col-lg-3 card">
-        <div class="card-body">
-            <h5 class="card-title">${intern.name}, ${intern.getRole()}</h5>
-            <h6 class="card-subtitle text-muted">ID: ${intern.id}</h6>
-            <p class="card-text">University Attending: ${intern.school}</p>
-            <p class="card-text">you can reach me at:</p>
+    `<div class="col mb-4">
+        <div class="card h-100 border-dark">
+            <div class="card-body">
+                <h5 class="card-title">${intern.name}, <span id="empl-role">${intern.getRole()}</span></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ID# ${intern.id}</h6>
+                <p id="intern-u-line" class="card-text"><span id="intern-uni">University Attending:</span> ${intern.school}</p>
+            </div>
+            <div class="card-footer border-dark">
                 <a href="mailto:${intern.email}" class="card-link">${intern.email}</a>
+            </div>
         </div>
     </div>`;
     content.push(internCard);
@@ -91,5 +101,4 @@ function genIntern(intern){
 
 module.exports = generateHTML;
 
-// <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
 // or its getOffice()?
