@@ -7,11 +7,6 @@ const Intern = require ('./lib/intern');
 const team = [];
 const generateHTML = require('./src/generateHTML');
 
-// const generateHTML = ({manager_name, manager_id, manager_email, manager_office, add_member, engineer_name, engineer_id, engineer_email, engineer_github, intern_name, intern_id, intern_email, intern_school}) =>
-// const { finished } = require('stream');
-// const { inherits } = require('util');
-
-
 // initializing function.
 function init(){
     // manager questions first.
@@ -20,7 +15,7 @@ function init(){
 
 // MANAGER QUESTIONS function.
 function managerQs(){
-    console.log('hi! congrats on building your team. let\'s get started!!');
+    console.log('HI! congrats on building your team. let\'s get started!');
     inquirer
         .prompt([
             {
@@ -60,7 +55,7 @@ function engineerQs(){
             {
                 type: 'input',
                 name: 'name',
-                message: 'what is their name?',
+                message: 'what\'s their name?',
             },
             {
                 type: 'input',
@@ -70,12 +65,12 @@ function engineerQs(){
             {
                 type: 'input',
                 name: 'email',
-                message: 'hit me with their email address!!',
+                message: 'hit me with their email address!',
             },
             {
                 type: 'input',
                 name: 'github',
-                message: 'thanks! now, what\'s their github username?',
+                message: 'thanks! now, what is their github username?',
             },
         ])
         .then((answers) =>{
@@ -88,13 +83,13 @@ function engineerQs(){
 
 // intern questions function.
 function internQs(){
-    console.log('add intern!');
+    console.log('you chose... add an intern!!!');
     inquirer
         .prompt([
             {
                 type: 'input',
                 name: 'name',
-                message: 'what\'s their name?',
+                message: 'what is their name?',
             },
             {
                 type: 'input',
@@ -104,12 +99,12 @@ function internQs(){
             {
                 type: 'input',
                 name: 'email',
-                message: 'thanks! what\'s their email address?',
+                message: 'thanks! what is their email address?',
             },
             {
                 type: 'input',
                 name: 'school',
-                message: '!! what\'s the name of the university they attend?',
+                message: 'solid. what is the name of the university they are attending?',
             },
         ])
         .then((answers) =>{
@@ -128,15 +123,15 @@ function addMember(){
                 type: 'list',
                 name: 'add_member',
                 message: 'would you like to add another team member?',
-                choices: ['yea, engineer', 'yea.. intern!', 'no thanks, build my team!'],
+                choices: ['yeah, engineer', 'yeah, intern', 'no thanks, build my team plz!'],
             },
         ])
         .then((response) =>{
             switch(response.add_member){
-                case 'yea, engineer':
+                case 'yeah, engineer':
                     engineerQs();
                     break;
-                case 'yea.. intern!':
+                case 'yeah, intern':
                     internQs();
                     break;
                 default:
@@ -145,10 +140,10 @@ function addMember(){
         });
 };
 
-// FINISH
+// FINISH🏁
 function finishUp(){
     fs.writeFile('./dist/index.html', generateHTML(team), (err) =>
-    err ? console.log(err) : console.log('yay! your team was created successfully.')
+    err ? console.log(err) : console.log('WOOHOO. your team was created successfully!')
     );
 };
 
