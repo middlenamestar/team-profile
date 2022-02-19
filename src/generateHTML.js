@@ -13,6 +13,7 @@ function generateHTML(team){
         }
     }
     content = content.join('');
+    // console.log(content);
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -100,5 +101,3 @@ function genIntern(intern){
 };
 
 module.exports = generateHTML;
-
-// or its getOffice()?
